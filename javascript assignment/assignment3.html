@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <h2>Prompt - Typeof - Math Operator</h2>
+    <script>
+        // Task for prompt
+        // Task 1
+        let age = prompt("what is your age?"); 
+        alert(age);
+
+        // Task 2
+        let color = prompt("what is your favourite color?");
+        alert(color);
+        console.log(color);
+
+        // Task 3
+        let code = 555;
+        let userCode = prompt("Enter your code");
+
+        if(code==userCode){
+            alert("Access granted");
+        }else{
+            alert("Access denied");
+        }
+        
+        // Task for typeof
+        // Task 1
+        let enterNumber = prompt("enter a number to check its datatype");
+        let type = console.log(typeof enterNumber)
+        
+        // task 2
+
+
+        // Task 3
+        let a = 1;
+        console.log(typeof a);
+        
+        let b = ali;
+        console.log(typeof b);
+
+        let c = true;
+        console.log(typeof c);
+
+        //  Task for Math Operator
+        // Task 1
+        let userentry1 = Number(prompt("Enter 1st number for sum"));
+        let userentry2 = Number(prompt("Enter 2nd number"));
+        alert("the sum is : "+ (userentry1 + userentry2));
+
+        // Task 2
+        let length = Number(prompt("Enter length of triangle"));
+        let width = Number(prompt("Enter width of triangle"));
+        let area = (length*width)/2;
+        alert("area of triangle is: "+ area)
+
+        // Task 3
+        let num1 = Number(prompt("Enter 1st number for division"));
+        let num2 = Number(prompt("Enter 2nd number"));
+        let divide = num1/num2;
+        let remainder = num1 % num2;
+        alert("remainder is: "+remainder);
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert</title>
+    <style>
+        h1, h3, p{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Assignment 1</h1>
+    <h3>Alert & Console log Usage</h3>
+    <p>Create a script that prompts the user to enter their name, roll number, and marks for HTML, CSS, and JavaScript. Display each input in the console log. Calculate the total marks and percentage, and display the results in both the console log and an alert box.</p>
+
+    <script>
+        let name, rollNo, htmlMarks, cssMarks, javascriptMarks, totalMarks, percentage;
+        async function setElementStyles(el, styles) {
+  for (const [key, value] of Object.entries(styles)) {
+    el.style[key] = value;
+  }
+}
+function validateName(name) {
+  const nameRegex = /^[a-zA-Z\s]+$/;
+  return nameRegex.test(name);
+}
+
+function validateMarks(marks) {
+  return marks >= 0 && marks <= 100;
+}
+
+function getMarks(subject) {
+  let marks;
+  let attempts = 0;
+  const maxAttempts = 3;
+
+  do {
+    const marksInput = prompt(`Enter your ${subject} marks:`);
+    if (marksInput === null) {
+      alert("Input cancelled.");
+      return null;
+    }
+    marks = parseFloat(marksInput);
+    if (isNaN(marks) || !validateMarks(marks)) {
+      alert(`Invalid ${subject} marks. Please enter a number between 0 and 100.`);
+      attempts++;
+    }
+    if (attempts >= maxAttempts) {
+      alert(`Too many invalid ${subject} marks attempts. Exiting.`);
+      return null;
+    }
+  } while (isNaN(marks) || !validateMarks(marks));
+
+  return marks;
+}
+function validateRollNumber(rollNumber) {
+  const rollNumberRegex = /^[0-9]+$/;
+  return rollNumberRegex.test(rollNumber);
+}
+
+function getStudentData() {
+  let name;
+  let nameAttempts = 0;
+  const maxNameAttempts = 3;
+
+  do {
+    name = prompt("Enter your name:");
+    if (name === null) {
+      alert("Input cancelled.");
+      return;
+    }
+    if (!validateName(name)) {
+      alert("Invalid name. Please enter only letters and spaces.");
+      nameAttempts++;
+    }
+    if (nameAttempts >= maxNameAttempts) {
+      alert("Too many invalid name attempts. Exiting.");
+      return;
+    }
+  } while (!validateName(name));
+
+  let rollNumber;
+  let rollNumberAttempts = 0;
+  const maxRollNumberAttempts = 3;
+
+  do {
+    rollNumber = prompt("Enter your roll number:");
+    if (rollNumber === null) {
+      alert("Input cancelled.");
+      return;
+    }
+    if (!validateRollNumber(rollNumber)) {
+      alert("Invalid roll number. Please enter only numbers.");
+      rollNumberAttempts++;
+    }
+    if (rollNumberAttempts >= maxRollNumberAttempts) {
+      alert("Too many invalid roll number attempts. Exiting.");
+      return;
+    }
+  } while (!validateRollNumber(rollNumber));
+
+  const htmlMarks = getMarks("HTML");
+  if (htmlMarks === null) return;
+
+  const cssMarks = getMarks("CSS");
+  if (cssMarks === null) return;
+
+  const jsMarks = getMarks("JavaScript");
+  if (jsMarks === null) return;
+
+  console.log("Name:", name);
+  console.log("Roll Number:", rollNumber);
+  console.log("HTML Marks:", htmlMarks);
+  console.log("CSS Marks:", cssMarks);
+  console.log("JavaScript Marks:", jsMarks);
+
+  const totalMarks = htmlMarks + cssMarks + jsMarks;
+  const percentage = (totalMarks / 300) * 100;
+
+  console.log("Total Marks:", totalMarks);
+  console.log("Percentage:", percentage.toFixed(2) + "%");
+
+  alert(
+    "Name: " +
+      name +
+      "\nRoll Number: " +
+      rollNumber +
+      "\nTotal Marks: " +
+      totalMarks +
+      "\nPercentage: " +
+      percentage.toFixed(2) +
+      "%"
+  );
+}
+getStudentData();
+         
+        
+    </script>
+
+
+</body>
+</html>

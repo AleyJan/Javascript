@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Bitwise Operator</title>
+</head>
+<body>
+    <h2>
+        Bitwise Operator Assignment
+    </h2>
+    <script>
+        // Bitwise Operator
+        // Task 1
+        let num1 = parseInt(prompt("Enter first number:"),10);
+        let num2 = parseInt(prompt("Enter second number:"),10);
+
+        let result = num1 & num2;
+        alert(`Bitwise AND of ${num1} & ${num2} is: ${result}`);
+        console.log(`Bitwise AND of ${num1} & ${num2} is: ${result}`);
+
+        // Task 2
+        let result2 = num1 | num2;
+        alert(`Bitwise OR of ${num1} & ${num2} is: ${result2}`);
+        console.log(`Bitwise OR of ${num1} & ${num2} is: ${result2}`);
+
+        // Task 3 XOR
+        let a = 5;
+        let b = 3;   
+
+        let result3 = a ^ b; 
+        console.log(`XOR of ${a} and ${b} is: ${result3}`);
+
+        // Task 4
+        let c = 10;
+        console.log(`NOT of ${c} is: ${~c}`);
+        
+        // Task 5 (num << n = x*2^n) ^power
+        let num = -6;
+        console.log(num << 2);  //each shift multiply num by 2
+
+        // Bitwise Application
+        // Task 1
+        let num3 = 5;
+        if (num3 & 1) {
+        console.log(`${num3} is Odd`);
+        } else {
+            console.log(`${num3} is Even`);
+        }
+
+        // Task 2
+        let x = 10, y = 15;
+
+        x = x ^ y; // 0^1 = 1, 1^1=0
+        y = x ^ y;
+        x = x ^ y;
+
+        console.log(x, y);
+
+        // Task 3
+        let num4 = 10;
+        let binary = num4.toString(2);
+        console.log(binary);
+
+        // Task 4
+        let num5 = 16; 
+        let result4 = num5 >> 2;  //n>>2 = n/2^n  ^power
+        console.log(result4);
+
+        // Task 5
+        let num6 = 5;
+        let multiplied = num6 << 1;
+        console.log(multiplied);
+
+        let divided = num6 >> 1;
+        console.log(divided);
+    </script>
+</body>
+</html>

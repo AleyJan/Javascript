@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4- Type conversion - Basic Operators - Math Function</title>
+</head>
+<body>
+    <h2>
+        Type Conversion - Basic Operator - Math Functions
+    </h2>
+    <script>
+        // Type Conversion
+        // Task 1
+        let userInput1 = Number(prompt("Enter your name or your hobby"));
+        console.log(typeof userInput1);
+        
+        // Task 2
+        let bool = true;
+        console.log(bool);        
+        console.log(String(bool));
+
+        // Task3
+        let num = 123;
+        let toStr = String(num);
+        toStr.length;
+        console.log(toStr);
+        console.log(typeof toStr);
+        
+        // Task 4
+        let nullNum = null;
+        console.log(Number(nullNum));
+
+        let undefineNum = undefined;
+        console.log(Number(undefineNum));
+
+        // Task 5
+        let inputStr1 = "12";
+        let inputStr2 = "2";
+        console.log(Number(inputStr1) + Number(inputStr2));
+
+        // Basic Operators
+        // Task 1
+        let input1 = Number(prompt("Enter a 1st number for addition and division"));
+        let input2 = Number(prompt("Enter 2nd number"));
+        let sum = input1 + input2;
+        let division = input1/input2;
+        console.log(sum);
+        console.log(division);
+
+        // Task 2
+        let isEqual = input1 === input2;
+        console.log("check if numbers are equal or not: "+ isEqual);
+        
+        // Task 3
+        let div1 = 9;
+        let div2 = 4;
+        let remiander = div1%div2;
+        console.log("remainder: "+ remiander);
+        
+        // Task 4
+        let num3 = 4;
+        console.log("multiply: "+ (num3*num3));
+        console.log("power: "+ (num3**num3));
+
+        // Task 5
+        let num4 = 8;
+        let num5 = 4;
+        let isNegative = (num4 - num5) < 0;
+        console.log("isNegative: "+ isNegative);
+        
+        // Math Functions
+        // Task 1
+        let randomNumber = Math.floor(Math.random() * 100);
+        console.log("Random Number:", randomNumber);
+
+        // Task 2
+        let num6 = Number(prompt("Enter a number to find its square root"));
+        let squareRoot = Math.sqrt(num6);
+        console.log("square root is: "+ squareRoot);
+
+        // Task 3
+        let roundedNumber = Math.round(12.6);
+        console.log("Rounded Number:", roundedNumber);
+
+        // TASK 4
+        let absoluteValue = Math.abs(-12);
+        console.log("Absolute Value:", absoluteValue);
+
+        // Task 5
+        let list = [1,2,3,4,100];
+        let maxNumber = Math.max(...list);
+        let minNumber = Math.min(...list);
+        console.log(maxNumber);
+        console.log(minNumber);
+        
+        
+                
+        
+        
+        
+        
+        
+
+        
+    </script>
+</body>
+</html>
