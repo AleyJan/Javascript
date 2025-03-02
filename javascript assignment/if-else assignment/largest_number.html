@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Number Finder</title>
+</head>
+<body>
+    <h2>Largest Number Finder</h2>
+    <script>
+        let numberOne = parseFloat(prompt("Enter first number:"));
+        let numberTwo = parseFloat(prompt("Enter second number:"));
+
+        if (numberOne > numberTwo) {
+            console.log(numberOne + " is the largest");
+            alert(numberOne + " is the largest");
+        } else if (numberTwo > numberOne) {
+            console.log(numberTwo + " is the largest");
+            alert(numberTwo + " is the largest");
+        } else {
+            console.log("Both numbers are equal");
+            alert("Both numbers are equal");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <script>
+        let numberOne = parseFloat(prompt("Enter first number:"));
+        let numberTwo = parseFloat(prompt("Enter second number:"));
+        let operator = prompt("Enter operator (+, -, *, /, %):");
+
+        if (operator === "+") {
+            console.log(numberOne + numberTwo);
+            alert(numberOne + numberTwo);
+        } else if (operator === "-") {
+            console.log(numberOne - numberTwo);
+            alert(numberOne - numberTwo);
+        } else if (operator === "*") {
+            console.log(numberOne * numberTwo);
+            alert(numberOne * numberTwo);
+        } else if (operator === "/") {
+            if (numberTwo !== 0) {
+                console.log(numberOne / numberTwo);
+                alert(numberOne / numberTwo);
+            } else {
+                console.log("Cannot divide by zero");
+                alert("Cannot divide by zero");
+            }
+        } else if (operator === "%") {
+            console.log(numberOne % numberTwo);
+            alert(numberOne % numberTwo);
+        } else {
+            console.log("Provide a valid operator");
+            alert("Provide a valid operator");
+        }
+
+    </script>
+</body>
+</html>

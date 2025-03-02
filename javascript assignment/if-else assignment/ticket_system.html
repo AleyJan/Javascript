@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket System</title>
+</head>
+<body>
+    <h2>Ticket Sytem</h2>
+    <script>
+        let amount = parseInt(prompt("Enter amount:"));
+        let gender = prompt("Enter gender (male/female):").toLowerCase();
+        let age = parseInt(prompt("Enter age:"));
+
+        if (amount === 10000 && (gender === "male" || gender === "female") && age >= 18) {
+            if (gender === "male") {
+                console.log("Goto the VIP enclosure (Male)");
+                alert("Goto the VIP enclosure (Male)");
+            } else {
+                console.log("Goto the VIP enclosure (Female)");
+                alert("Goto the VIP enclosure (Female)");
+            }
+        } else {
+            console.log("Not eligible for VIP enclosure");
+            alert("Not eligible for VIP enclosure");
+        }
+
+
+    </script>
+</body>
+</html>

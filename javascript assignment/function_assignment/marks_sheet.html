@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Sheet using function</title>
+</head>
+<body>
+    <h2>Students Marks Sheet</h2>
+    <script>
+        function calculatePercentage(obtainedMarks, totalMarks) {
+            return (obtainedMarks / totalMarks) * 100;
+        }
+
+        let studentName = prompt("Enter student name:");
+        let subject1 = parseFloat(prompt("Enter marks for Subject 1 out of 100:"));
+        let subject2 = parseFloat(prompt("Enter marks for Subject 2 out of 100:"));
+        let subject3 = parseFloat(prompt("Enter marks for Subject 3 out of 100:"));
+        let totalMarks = parseFloat(prompt("Enter total marks:"));
+
+        let obtainedMarks = subject1 + subject2 + subject3;
+        let percentage = calculatePercentage(obtainedMarks, totalMarks);
+
+        console.log("Student: " + studentName);
+        console.log("Obtained Marks: " + obtainedMarks + "/" + totalMarks);
+        console.log("Percentage: " + percentage + "%");
+
+        alert("Student: " + studentName + "\nObtained Marks: " + obtainedMarks + "/" + totalMarks + "\nPercentage: " + percentage + "%");
+
+    </script>
+</body>
+</html>

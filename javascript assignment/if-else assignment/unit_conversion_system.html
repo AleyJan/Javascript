@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion System</title>
+</head>
+<body>
+    <h2>Unit Conversion System</h2>
+    <script>
+        let value = parseFloat(prompt("Enter value to convert:"));
+        let fromUnit = prompt("Enter the unit of the value (mm, cm, inch, foot, meter):");
+        let toUnit = prompt("Enter the unit to convert to (mm, cm, inch, foot, meter):");
+        let convertedValue = 0;
+
+        if (fromUnit === "mm" && toUnit === "cm") {
+            convertedValue = value / 10;
+        } else if (fromUnit === "cm" && toUnit === "mm") {
+            convertedValue = value * 10;
+        } else if (fromUnit === "cm" && toUnit === "inch") {
+            convertedValue = value / 2.54;
+        } else if (fromUnit === "inch" && toUnit === "cm") {
+            convertedValue = value * 2.54;
+        } else if (fromUnit === "inch" && toUnit === "foot") {
+            convertedValue = value / 12;
+        } else if (fromUnit === "foot" && toUnit === "inch") {
+            convertedValue = value * 12;
+        } else if (fromUnit === "foot" && toUnit === "meter") {
+            convertedValue = value / 3.281;
+        } else if (fromUnit === "meter" && toUnit === "foot") {
+            convertedValue = value * 3.281;
+        } else {
+            console.log("Invalid unit conversion");
+            alert("Invalid unit conversion");
+        }
+
+        if (convertedValue !== 0) {
+            console.log(value + " " + fromUnit + " is " + convertedValue + " " + toUnit);
+            alert(value + " " + fromUnit + " is " + convertedValue + " " + toUnit);
+        }
+
+    </script>
+</body>
+</html>

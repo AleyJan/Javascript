@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using function</title>
+</head>
+<body>
+    <h2>Calculator using function</h2>
+
+    <script>
+        
+        function calculate(numberOne, numberTwo, operator) {
+        if (operator === "+") {
+            return numberOne + numberTwo;
+        } else if (operator === "-") {
+            return numberOne - numberTwo;
+        } else if (operator === "*") {
+            return numberOne * numberTwo;
+        } else if (operator === "/") {
+            if (numberTwo !== 0) {
+                return numberOne / numberTwo;
+            } else {
+                return "Cannot divide by zero";
+            }
+        } else if (operator === "%") {
+            return numberOne % numberTwo;
+        } else {
+            return "Provide a valid operator";
+        }
+    }
+
+    let numberOne = parseFloat(prompt("Enter first number:"));
+    let numberTwo = parseFloat(prompt("Enter second number:"));
+    let operator = prompt("Enter operator (+, -, *, /, %):");
+
+    let result = calculate(numberOne, numberTwo, operator);
+    console.log(result);
+    alert(result);
+
+    </script>
+</body>
+</html>

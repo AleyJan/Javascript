@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather assistant</title>
+</head>
+<body>
+    <h2>Weather Assistant</h2>
+    <script>
+        let temp = parseInt(prompt("Enter temperature:"));
+
+        if (temp >= 10 && temp < 20) {
+            console.log("Take jacket");
+            alert("Take jacket");
+        } else if (temp >= 20 && temp < 26) {
+            console.log("Awesome weather");
+            alert("Awesome weather");
+        } else if (temp >= 26 && temp <= 40) {
+            console.log("Take shower");
+            alert("Take shower");
+        } else {
+            console.log("Invalid temperature");
+            alert("Invalid temperature");
+        }
+
+    </script>
+</body>
+</html>
