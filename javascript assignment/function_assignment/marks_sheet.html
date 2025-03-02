@@ -12,6 +12,20 @@
             return (obtainedMarks / totalMarks) * 100;
         }
 
+        function getGrade(percentage) {
+            if (percentage >= 90) {
+                return "A";
+            } else if (percentage >= 80) {
+                return "B";
+            } else if (percentage >= 70) {
+                return "C";
+            } else if (percentage >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+
         let studentName = prompt("Enter student name:");
         let subject1 = parseFloat(prompt("Enter marks for Subject 1 out of 100:"));
         let subject2 = parseFloat(prompt("Enter marks for Subject 2 out of 100:"));
@@ -20,12 +34,14 @@
 
         let obtainedMarks = subject1 + subject2 + subject3;
         let percentage = calculatePercentage(obtainedMarks, totalMarks);
+        let grade = getGrade(percentage);
 
         console.log("Student: " + studentName);
         console.log("Obtained Marks: " + obtainedMarks + "/" + totalMarks);
-        console.log("Percentage: " + percentage + "%");
+        console.log("Percentage: " + percentage.toFixed(2) + "%");
+        console.log("Grade: " + grade);
 
-        alert("Student: " + studentName + "\nObtained Marks: " + obtainedMarks + "/" + totalMarks + "\nPercentage: " + percentage + "%");
+        alert("Student: " + studentName + "\nObtained Marks: " + obtainedMarks + "/" + totalMarks + "\nPercentage: " + percentage.toFixed(2) + "%\nGrade: " + grade);
 
     </script>
 </body>
