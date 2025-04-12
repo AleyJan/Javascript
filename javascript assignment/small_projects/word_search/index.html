@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Searching</title>
+</head>
+<body>
+    <h2>
+        Word Searching in a paragrapg or in text
+    </h2>
+    <script>
+        const paragraph = prompt("Enter a paragraph or long text:");
+        const searchWord = prompt("Enter a word or sentence to search:");
+
+        if (paragraph.includes(searchWord)) {
+            alert(`The word/sentence "${searchWord}" was found in the text!`);
+        } else {
+            alert(`The word/sentence "${searchWord}" was NOT found in the text.`);
+        }
+
+    </script>
+</body>
+</html>
