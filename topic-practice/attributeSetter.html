@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Setter</title>
+</head>
+<body>
+    <h1>Build a tool that create or update tag attribute by input</h1>
+
+    <div id="div">this is div</div>
+
+    <form action="">
+     <input id="tagId" name="tagId" type="text" placeholder="enter id of tag">   
+    <input id="attributeName" name="attributeName" type="text" placeholder="enter attribute name">
+    <input id="attributeValue" name="attributeValue" type="text" placeholder="enter attribute value">
+    <input type="button" value="submit" onclick="giveAttribute()">
+    </form>
+
+    <script>
+        function giveAttribute(){
+        const tagId = document.getElementById("tagId").value;
+        const attributeName = document.getElementById("attributeName").value;
+        const attributeValue = document.getElementById("attributeValue").value;
+
+        const elementId = document.getElementById(tagId);
+
+        elementId.setAttribute(attributeName,attributeValue);
+    }
+
+    </script>
+</body>
+</html>

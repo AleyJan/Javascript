@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Destructure from Array of Objects
+
+</title>
+</head>
+<body>
+    <h1> Destructure from Array of Objects
+Destructure the title of the first two posts.
+</h1>
+    <script>
+        const posts = [
+        { id: 1, title: "Hello" },
+        { id: 2, title: "World" }
+    ];
+
+    const [{title},{title:title2}] = posts
+    console.log(title);
+    console.log(title2);
+    
+    
+
+    </script>
+    
+</body>
+</html>

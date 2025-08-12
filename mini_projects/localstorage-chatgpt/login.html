@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+  <h2>Login</h2>
+  <form onsubmit="login(event)">
+    <input class="form-control mb-2" type="text" id="username" placeholder="Username" required>
+    <input class="form-control mb-2" type="password" id="password" placeholder="Password" required>
+    <button class="btn btn-success">Login</button>
+  </form>
+
+  <script>
+    const savedUser = JSON.parse(localStorage.getItem("user"));
+    if (!savedUser) {
+      window.location.href = "register.html"; // Not registered yet
+    }
+
+    function login(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (savedUser.username === username && savedUser.password === password) {
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "home.html";
+      } else {
+        alert("Invalid credentials.");
+      }
+    }
+  </script>
+</body>
+</html>

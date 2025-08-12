@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    
+    const ulElement = document.getElementById("ul");
+    
+    const liElements = ulElement.children;
+    const lilength = liElements.length;
+    var count = 0;
+
+    
+    for (var i = 0; i < lilength; i++) {
+        liElements[i].innerHTML = "coming soon";
+        count++;
+    }
+
+    console.log(count);  
+</script>
+</body>
+</html>

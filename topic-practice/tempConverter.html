@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <form id="tempForm">
+        <input type="text" id="temp" placeholder="Enter Temperature">
+        <select name="selectUnit" id="selectUnit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+        </select>
+        <button type="button" onclick="convertTemp()">Convert</button>
+        <p>Converted Temperature: <span id="convertedTemp">
+            
+        </span></p>
+    </form>
+    <script>
+        function convertTemp(){
+            const userInput = parseFloat(document.getElementById("temp").value);
+            const unit = document.getElementById("selectUnit").value;
+            let convertedTemp;
+            if(unit === "celsius"){
+                convertedTemp = (userInput - 32) * (5/9);
+            }else{
+                convertedTemp = (userInput * (9/5)) + 32;
+            }
+            document.getElementById("convertedTemp").textContent = convertedTemp;
+
+
+            
+        }
+    </script>
+</body>
+</html>

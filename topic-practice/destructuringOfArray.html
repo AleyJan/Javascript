@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring of Aarray</title>
+</head>
+<body>
+
+
+    <script>
+        // const numbers= [1,2,3,4,5];
+        // const [firstValue,secondValue,thirdValue] = numbers;
+
+        // console.log(firstValue,secondValue,thirdValue);
+
+        // // to skip 1st value
+        // const [ ,secondValue,thirdValue] = numbers;
+
+        // // to skip 1st and 2nd value
+        // const [ , , thirdValue] = numbers;
+
+        // // setting default value in destructuring, fifth was not desfined earlier
+        // const [firstValue,secondValue,thirdValue,fourthValue,fifthvalue=100] = numbers; 
+
+        // // setting default value in destructuring, but if fifth is defined earlier then cannot give default value
+        // const [firstValue,secondValue,thirdValue,fourthValue,fifthvalue=100] = numbers; 
+        // console.log(fifthvalue); 
+
+        // destructuring of nested array / nested destructuring
+        // const number2 = [1,2,3,['a','b']];
+        // const [firstValue, secondValue ,thirdValue , [first,second]] = number2;
+        // console.log(first,second);
+
+        // assigning default values to nested empty array
+        // const number3 = [1,2,3,[]];
+        // const [firstValue, secondValue ,thirdValue , [first=10,second=20]] = number3;
+        // console.log(first,second);
+
+        // // creating new index through destructuring
+        const number4 = [1,2,3];
+        // // const [firstValue, secondValue ,thirdValue , [first,second]=[10,20]] = number4;
+        // const [firstValue, secondValue ,thirdValue , [first=10,second=20]=[]] = number4;
+
+        // this will take the value "a" and "b", will ignore default value
+        // const [firstValue, secondValue ,thirdValue , [first=10,second=20]=["a","b"]] = number4;
+
+        // console.log(first,second);
+
+
+        
+        
+        
+    </script>
+    
+</body>
+</html>

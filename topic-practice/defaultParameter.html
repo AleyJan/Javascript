@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default parameter</title>
+</head>
+<body>
+    
+    <script>
+
+        // const greet = (message)=>{
+        //     console.log(message);
+            
+        // }
+        // greet(hi)
+
+        // default parameters
+        // const greet = (message="hi")=>{
+        //     console.log(message);
+            
+        // }
+        // greet()
+
+        const greet = ([first,second,third]=[])=>{
+            console.log(first);
+            
+        }
+        greet([1,2,3])
+
+        // destructuring object
+
+        // default parameters
+
+        const greet2 = (
+        { fullName, message } = { fullName: "ali", message: "hello" },something) => {
+
+            console.log("something: ", something);
+            console.log("message: ", message);
+            console.log("fullName: ", fullName);
+        };
+
+        greet2(undefined, "yeh something ka argument hai ");
+
+    </script>
+</body>
+</html>

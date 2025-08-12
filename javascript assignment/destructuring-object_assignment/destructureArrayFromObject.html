@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructure Object with Array Property</title>
+</head>
+<body>
+    <h1>
+        Destructure Object with Array Property
+Destructure skills from the object and get the first skill
+    </h1>
+    <script>
+        const developer = {
+        name: "Ali",
+        skills: ["JavaScript", "React", "Node"]
+        };
+
+        const {skills:[skill1]}= developer;
+        console.log(skill1);
+        
+        function createIcecream({ scoops = 1, toppings = ["Dark Chocolate"] } = {}) {
+        const scoopText = scoops === 1 ? "scoop" : "scoops";
+        console.log(
+            `Your sundae has ${scoops} ${scoopText} with ${toppings.join(" and ")} toppings.`
+        );
+        }
+createIcecream({toppings:["nuts"]});
+
+        
+
+        
+    </script>
+    
+</body>
+</html>

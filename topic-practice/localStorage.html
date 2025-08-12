@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Methods</title>
+</head>
+<body>
+    <h2>Local Storage Methods</h2>
+    <script>
+        localStorage.setItem("user", "ali");
+        localStorage.getItem("user");
+        console.log("localStorage.getItem('user')", localStorage.getItem("user"));
+
+        localStorage.length;   //show length/number of keys stored
+        localStorage.removeItem("user");  //to remove single key
+        localStorage.clear();  //clear storage for specific domain(it only remove localStorage for one website)
+        
+    </script>
+</body>
+</html>

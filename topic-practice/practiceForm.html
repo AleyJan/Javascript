@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Form Submission</title>
+</head>
+<body>
+    <!-- <form id="form" >
+        <input id="name" type="text">
+        <input type="button" value="submit" onclick="addEntry()">
+    </form>
+    <button id="remove" onclick="removeEntry()">Remove last entry</button>
+
+    <div>Entries list:</div>
+    <ul id="entryList"></ul>
+
+    <script>
+        const entries=[];
+
+        function addEntry(){
+            const name = document.getElementById("name").value;
+            const entryAdded = entries.push(name);
+            // console.log(entryAdded);
+
+            document.getElementById("name").value = "";
+            displayList();
+            
+        }
+
+        function removeEntry(){
+            entries.pop();
+            displayList();
+        }
+
+        function displayList(){
+            const list = document.getElementById("entryList");
+            list.innerHTML = ""; 
+            
+            
+            for(let i=0; i<entries.length; i++){
+                const li = document.createElement("li");
+                li.textContent = entries[i];
+                list.appendChild(li);
+            }
+            
+        }
+    </script> -->
+
+
+    <form id="form">
+        <input id="firstName" type="text">
+        <input id="lastName" type="text">
+        <input type="button" value="Submit" onclick="addEntry()">
+    </form>
+    <button id="remove" type="button" onclick="removeEntry()"></button>
+
+    <script>
+        function addEntry(){
+            const firstName= document.getElementById("firstname").value;
+            const lastName = document.getElementById("lastname").value;
+    }
+    </script>
+</body>
+</html>

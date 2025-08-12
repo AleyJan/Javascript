@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructure in Function Parameters (Object)
+</title>
+</head>
+<body>
+    <h1>Destructure in Function Parameters (Object)
+Create a function that accepts an object and destructures name and role.</h1>
+
+        <script>
+            function greet(user) {
+                console.log(user);
+                const {name,role} = user;
+                console.log("name: ",name);
+                console.log("role: ", role);
+            }
+
+    greet({ name: "Osama", role: "Teacher" });
+
+        </script>
+    
+</body>
+</html>

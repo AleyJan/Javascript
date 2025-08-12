@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring With Default Values</title>
+</head>
+<body>
+    <h1>
+        Destructuring With Default Values
+        Destructure three values from colors, provide default if a value is missing.
+    </h1>
+
+    <script>
+        const colors = ["red"];
+        const [color1,color2="purple",color3="blue"]= colors;
+
+        console.log("color1: ",color1);
+        console.log("color2: ",color2);
+        console.log("color3: ",color3);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append child  through DOM</title>
+</head>
+<body>
+    <h1>hello world</h1>
+    <div id="div">
+
+    </div>
+    <button onclick="addNode()">add p node</button>
+
+    <script>
+        let count = 0;
+        function addNode(){
+        let nodeToAdd = document.createElement("p");
+        let textNode = document.createTextNode(`this is node ${count}`);
+
+        nodeToAdd.setAttribute("style", "color:red");
+
+        nodeToAdd.appendChild(textNode);
+        const div = document.getElementById("div");
+        div.appendChild(nodeToAdd);
+        count++;
+        }
+    </script>
+</body>
+</html>

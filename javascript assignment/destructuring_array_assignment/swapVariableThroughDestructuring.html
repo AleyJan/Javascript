@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Variables Through destructuring</title>
+</head>
+<body>
+    <h1>Swap Variables a and b Through Array destructuring</h1>
+
+    <script>
+        let a=10;
+        let b=20;
+        console.log("value of a: ",a);
+        console.log("value of b: ",b);
+        let array=[];
+        array.push(a,b);
+        console.log("array",array);
+
+        const [c, d]= array;
+        console.log("value of c",c ,"value of d",d);
+
+        a=d;
+        b=c;
+        console.log("after swaping");
+        
+        console.log("now value of a: ",a);
+        console.log("now value of b: ",b);
+        
+        
+        
+        
+    </script>
+</body>
+</html>

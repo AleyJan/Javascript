@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form with JS</title>
+</head>
+<body>
+
+  <h2>Simple Form</h2>
+
+  <form id="myForm">
+    <input type="text" id="nameInput" placeholder="Enter your name" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <button onclick="removeEntry()">Remove Last</button>
+
+  <h3>Entries:</h3>
+  <ul id="entryList"></ul>
+
+  <script>
+    const entries = [];
+
+    document.getElementById("myForm").onsubmit = function(e) {
+      e.preventDefault(); // prevent page reload
+
+      const name = document.getElementById("nameInput").value;
+      entries.push(name);
+
+      document.getElementById("nameInput").value = ""; // clear input
+      updateList();
+    }
+
+    function removeEntry() {
+      entries.pop();
+      updateList();
+    }
+
+    function updateList() {
+      const list = document.getElementById("entryList");
+      list.innerHTML = "";
+
+      entries.forEach(function(entry) {
+        const li = document.createElement("li");
+        li.textContent = entry;
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>

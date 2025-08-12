@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="btn btn-outline-danger ms-auto" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 id="welcomeMessage" class="text-center">Welcome!</h2>
+
+    <div class="mt-4">
+      <form onsubmit="addTask(event)" class="d-flex gap-2">
+        <input name="taskTitle" class="form-control" type="text" placeholder="Enter task title" required>
+        <button class="btn btn-primary">Add</button>
+      </form>
+    </div>
+
+    <ul id="taskList" class="list-group mt-4"></ul>
+  </div>
+
+  <script>
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!currentUser || currentUser.login !== "true") {
+      location.replace("index.html");
+      
+    }
+    document.getElementById("welcomeMessage").innerText = `Welcome, ${currentUser.username}!`;
+    // location.href= "home.html";
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function renderTasks() {
+      const taskList = document.getElementById("taskList");
+      taskList.innerHTML = "";
+      
+      tasks
+        .filter(task => task.username === currentUser.username)
+        .forEach((task, index) => {
+          const li = document.createElement("li");
+          li.className = "list-group-item d-flex justify-content-between align-items-center";
+          li.innerHTML = `
+            ${task.title}
+            <button class="btn btn-sm btn-danger" onclick="removeTask(${index})">Remove</button>
+          `;
+          taskList.appendChild(li);
+        });
+    }
+
+    function addTask(e) {
+      e.preventDefault();
+      const title = e.target.taskTitle.value.trim();
+      if (title === "") return;
+
+      const task = { title, username: currentUser.username };
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+
+      e.target.reset();
+      renderTasks();
+    }
+
+    function removeTask(index) {
+      
+      const userTasks = tasks.filter(t => t.username === currentUser.username);
+      const taskToRemove = userTasks[index];
+
+      
+      const globalIndex = tasks.findIndex(t => t.username === taskToRemove.username && t.title === taskToRemove.title);
+
+      if (globalIndex !== -1) {
+        tasks.splice(globalIndex, 1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        renderTasks();
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("currentUser");
+      location.replace("index.html");
+    }
+
+    renderTasks();
+  </script>
+
+</body>
+</html>

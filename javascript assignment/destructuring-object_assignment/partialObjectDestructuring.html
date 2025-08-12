@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partial Object Destructuring
+
+</title>
+</head>
+<body>
+    <h1>
+        Partial Object Destructuring
+Destructure only brand and model from the object.
+
+    </h1>
+
+    <script>
+        const laptop = {
+        brand: "Dell",
+        model: "XPS 13",
+        price: 250000,
+        color: "Silver"
+        };
+
+        const {brand,model} = laptop;
+
+        console.log("brand:", brand);
+        console.log("model:", model);
+        
+        
+    </script>
+</body>
+</html>

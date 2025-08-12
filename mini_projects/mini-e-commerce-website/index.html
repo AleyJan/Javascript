@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loom Luxe - Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body onload="renderProducts(); updateCartCount(); updateNavbarAuthStatus(); checkLoginSuccess();">
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="./index.html">Loom Luxe</a>
+    <div class="d-flex align-items-center ms-auto">
+      <div id="navbar-user-controls" class="me-3"></div>
+        <div id="cart-button-container" class="d-none">
+          <a href="cart.html" class="btn btn-light position-relative">
+            Cart
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </a>
+        </div>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="bg-light text-center py-5 mb-4">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Welcome to Loom Luxe</h1>
+      <p class="lead">Where timeless fashion meets modern elegance. Discover premium quality clothing crafted for every occasion.</p>
+      <a href="#product-container" class="btn btn-dark btn-lg mt-3">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <div class="container mt-4">
+    <h2 class="mb-4 text-center fw-bold">Featured Products</h2>
+    <div class="row" id="product-container"></div>
+  </div>
+
+  <!-- Floating Alert -->
+  <div id="custom-alert" class="alert alert-warning position-fixed d-none" style="bottom: 20px; right: 20px; z-index: 9999;"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    const message = localStorage.getItem("alertMessage");
+    if (message) {
+      showAlert(message, "warning");
+      localStorage.removeItem("alertMessage");
+    }
+  </script>
+
+  <!-- Footer -->
+<footer class="bg-dark text-light mt-5 pt-4 pb-2">
+  <div class="container text-center text-md-start">
+    <div class="row">
+
+      <!-- Logo and Brand -->
+      <div class="col-md-4 mb-3">
+        <h5 class="fw-bold">Loom Luxe</h5>
+        <p class="small">Quality fashion products at your fingertips. Shop with ease and style.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-4 mb-3">
+        <h6 class="text-uppercase">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
+          <li><a href="login.html" class="text-decoration-none text-light">Login</a></li>
+          <li><a href="register.html" class="text-decoration-none text-light">Register</a></li>
+          <li><a href="cart.html" class="text-decoration-none text-light">Cart</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 mb-3">
+        <h6 class="text-uppercase">Contact Us</h6>
+        <p class="small mb-1">Email: aliriayat507@gmail.com</p>
+        <p class="small mb-0">Phone: +92 300 9034500</p>
+      </div>
+
+    </div>
+    <hr class="bg-light" />
+    <p class="text-center small mb-0">&copy; 2025 Loom Luxe. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

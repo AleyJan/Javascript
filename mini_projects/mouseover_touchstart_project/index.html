@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover - touchstart Project</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+        #container {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            }
+            #jail{
+                width: 50vw;
+                height: 50vh;
+                background-color: rgb(163, 153, 115);
+                margin-top: 30px;
+                border: 4px solid black;
+
+            }
+        #ball{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 100px;
+            background-color: black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+        }
+        #message {
+        position: absolute;
+        top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: red;
+        display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Touch me if you can</h2>
+        
+            <div id="ball"></div>
+        
+        <div id="message">Don't you dare to touch me!</div>
+    </div>
+
+
+    <script>
+
+        function moveBall() {
+        const randomX = (Math.random() - 0.5) * 200; 
+        const randomY = (Math.random() - 0.5) * 200; 
+
+        ball.style.transform = `translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px))`;
+        }
+
+        ball.addEventListener('mouseover', moveBall);  
+        ball.addEventListener('touchstart', moveBall);  
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form Entry App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form input, form textarea {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 300px;
+    }
+    .entry {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    button.remove-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Information Form</h2>
+  <form id="userForm">
+    <input type="text" id="firstName" placeholder="First Name" required />
+    <input type="text" id="lastName" placeholder="Last Name" required />
+    <input type="number" id="age" placeholder="Age" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <textarea id="address" placeholder="Address" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h3>Submitted Entries:</h3>
+  <div id="entries"></div>
+
+  <script>
+    const form = document.getElementById('userForm');
+    const entriesContainer = document.getElementById('entries');
+    let entries = [];
+
+    function generateCustomId(index) {
+      return `A${index}`;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const id = generateCustomId(entries.length);
+
+      const entry = {
+        id: id,
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        age: document.getElementById('age').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value
+      };
+
+      entries.push(entry);
+      renderEntries();
+      form.reset(); // Clear form
+    });
+
+    function renderEntries() {
+      entriesContainer.innerHTML = '';
+      entries.forEach(entry => {
+        const div = document.createElement('div');
+        div.className = 'entry';
+        div.innerHTML = `
+          <strong>ID: ${entry.id}</strong><br>
+          Name: ${entry.firstName} ${entry.lastName}<br>
+          Age: ${entry.age}<br>
+          Email: ${entry.email}<br>
+          Phone: ${entry.phone}<br>
+          Address: ${entry.address}<br>
+          <button class="remove-btn" onclick="removeEntry('${entry.id}')">Remove</button>
+        `;
+        entriesContainer.appendChild(div);
+      });
+    }
+
+    function removeEntry(id) {
+      entries = entries.filter(entry => entry.id !== id);
+      renderEntries();
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <h1>Arrow Function Practice - For small utility functions and callbacks</h1>
+    
+    <script>
+        const greet = (name)=> console.log("hi " + name);
+        greet("ali");
+
+        const multiply = (x,y)=> console.log(x * y);
+        multiply(2,2);
+
+        setTimeout(()=> console.log("time up"), 1000);
+        
+        const student = {
+            name: "ali",
+            sayHi: function() {
+                setTimeout(() => {
+                    console.log("hi " + this.name);
+                }, 1000);
+            }
+        };
+        student.sayHi();
+
+    </script>
+</body>
+</html>

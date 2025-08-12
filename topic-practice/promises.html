@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+</head>
+<body>
+    <h2>Promises</h2>
+    <p>promises has 3 states -> pending , fulfilled, reject</p>
+
+    <script>
+    //     //callback hell
+    //     const makePizza = (callback)=>{
+    //         setTimeout(()=>{
+    //             callback();
+    //             console.log("we are making pizza");
+                
+
+    //         },2000)
+    //     }
+
+    //     const ready=()=>{
+            
+    //         setTimeout(()=>{
+    //             console.log("pizza is ready");
+                
+    //         },1000)
+    //     }
+
+    //    makePizza(ready);
+
+
+
+
+       // promises resolve callback hell
+
+        const myPromise = new Promise(function(resolve,reject){ //Promise accept callback, and that callback has 2 parameters
+            let isError = true;
+
+            if(isError){
+                reject("promise reject");
+
+            }else{
+                resolve("promise resolve");
+            }
+            
+        });
+
+        myPromise.then(response=>console.log(response)
+        ).catch(error=>console.log(error)
+        ).finally(() => console.log("promise finally hogaya"));
+
+
+        
+    //    const pizzaPromise = new Promise((resolve,reject)=>{
+    //     let isPizzaReady = true;
+
+    //     if(isPizzaReady){
+    //         setTimeout(()=>resolve("pizza ready to be delivered"),2000);
+    //     }else{
+    //         reject("pizza not ready")
+    //     }
+
+    //    })
+    //    pizzaPromise.then((response)=>console.log(response));
+       
+
+        
+    </script>
+</body>
+</html>

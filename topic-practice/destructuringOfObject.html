@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring of object</title>
+</head>
+<body>
+    <script>
+
+        // const person ={
+        //     fullName: "ali",
+        //     age: 14,
+        //     phone: undefined
+        // }
+
+        // destructuring , key will be same as in object while destructing, sequence doesn't matter
+        // const {age, fullName, phone=12344} = person;
+        // console.log(phone);
+
+        // const person2 = {
+        //     fullName:"ali",
+        //     age: 15,
+        //     phone:null 
+        // }
+        //  const {age, fullName, phone=12344} = person2;
+        // console.log(phone);
+
+        // nested destructuring of object
+        // const person3 = {
+        //     fullName:"ali",
+        //     age: 15,
+        //     address:{
+        //         city:"peshawar"
+        //     },
+        // }
+        //  const {age, fullName, address:{city} } = person3;
+        // console.log(city);
+
+        // adding nested object thurough destructuring
+        const person3 = {
+            fullName:"ali",
+            age: 15,
+            
+        }
+         const {age, fullName, address:{city="peshawar"}={} } = person3;
+        console.log(city);
+
+        
+
+
+
+    </script>
+</body>
+</html>

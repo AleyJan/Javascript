@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting attribute with DOM</title>
+</head>
+<body>
+    <h1 id="h1">click button to change  my color</h1>
+    <button onclick="changeColor()">change color to red</button>
+    
+
+    <script>
+        let flag = false;
+        function changeColor(){
+            const h1 = document.getElementById("h1");
+
+            if(flag == false){
+                 h1.setAttribute("style", "color:red");
+                
+            }
+            else{
+                 h1.setAttribute("style", "color:green");
+            }
+            flag = !flag
+            
+
+        }
+    </script>
+   
+
+
+</script>
+</body>
+</html>

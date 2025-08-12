@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes  </title>
+</head>
+<body>
+    <h2>classes</h2>
+
+    <script>
+        // class Car{
+        //     constructor(brand, model){
+        //         this.brand = brand;
+        //         this.model;
+        //     }
+        //     drive(){
+        //         console.log("Driving " + this.brand);
+        //     }
+        // }
+        // const myCar = new Car("ford", "mustang");
+        // myCar.drive();
+
+
+        // class ElectricCar extends Car{
+        //     constructor(brand, model, batteryLife){
+        //         super(brand,model);
+        //         this.batteryLife = batteryLife;
+
+        //     }
+        //     carDetail(){
+        //         console.log("driving " + this.brand + " with batteryLife "+ this.batteryLife);
+                
+        //     }
+        // }
+        // const newCar = new ElectricCar("tesla","3","80%");
+        // newCar.carDetail();
+        // newCar.drive();
+
+
+        // class Human{
+        //     constructor(name,age){
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     detail(){
+        //         console.log(`employee name is ${this.name} and age is ${this.age}`);
+                
+        //     }
+        // }
+
+        // class Person extends Human{
+        //     constructor(name,age){
+        //         super(name,age);
+        //     }
+        // }
+        // const p1 = new Person("ali",22);
+        // p1.detail();
+
+
+        class Human{
+            name;
+            age;
+            detail(name, age){
+                this.name = name;
+                this.age = age;
+                console.log(`name is ${name} age is ${this.age}`);
+                
+            }
+        }
+
+        class Person extends Human{
+
+        }
+        const p1 = new Person();
+        p1.detail("ali",22);
+    </script>
+</body>
+</html>

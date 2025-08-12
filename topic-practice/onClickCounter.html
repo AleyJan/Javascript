@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Example</title>
+</head>
+<body>
+    <h1>Event Listener - onClick Practice</h1>
+
+    <h4>Click the button to count!</h4>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+    <p>Count: <span id="display">0</span></p>
+
+    <script>
+        let count = 0;
+        const increment = document.getElementById("increment");
+        const decrement = document.getElementById("decrement");
+        const display = document.getElementById("display");
+
+        increment.onclick = function() {
+            count++;
+            display.textContent = count; // Updates the text content of the span
+        };
+
+        decrement.onclick = function(){
+            count--;
+            display.textContent = count;
+        }
+    </script>
+
+</body>
+</html>

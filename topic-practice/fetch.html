@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch web api</title>
+</head>
+<body>
+    <h1>fetch api</h1>
+    <p>fetch is web api which js borrow/ use,  fetch use promise at its backend</p>
+
+    <script>
+    //    const data = fetch("https://jsonplaceholder.typicode.com/users");
+    //    console.log(data);
+    //    console.log("hello"); //hello will print before data, cuz data/promise is pending
+
+    const data = fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response)=>response.json())
+    .then(result=>console.log(result))
+    .catch(error=>console.log(error)) //in this case catch will return empty object, if we use wrong endpoint
+    .finally(()=>console.log("this is finally, it will always run, either data comes or not"))
+    
+       
+       
+    </script>
+</body>
+</html>

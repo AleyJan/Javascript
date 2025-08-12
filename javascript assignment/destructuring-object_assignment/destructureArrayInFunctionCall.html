@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Multiple Values from Function
+Return an array of two values and destructure them on the receiving end.</title>
+</head>
+<body>
+    <h1>Return Multiple Values from Function
+Return an array of two values and destructure them on the receiving end.</h1>
+
+        <script>
+            function getUserInfo() {
+                const name= "Ali";
+                const age= 22;
+                return [name,age];
+  
+        }
+        const [userName, userAge] = getUserInfo();
+
+        console.log(userName);
+        console.log(userAge);
+        
+        
+
+        </script>
+</body>
+</html>

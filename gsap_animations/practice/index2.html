@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP Stickman Animation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+      body {
+        background: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      svg {
+        border: 1px solid #ccc;
+        background: white;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      }
+      .kill-btn {
+        background-color: red;
+        color: white;
+      }
+      .forgive-btn {
+        background-color: green;
+        color: white;
+      }
+      .speech {
+        font-size: 14px;
+        fill: black;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Funny Stickman GSAP Animation</h1>
+
+    <!-- Buttons -->
+    <button class="kill-btn">Kill</button>
+    <button class="forgive-btn">Forgive</button>
+
+    <!-- SVG Scene -->
+    <svg width="800" height="300">
+      <!-- Gunman -->
+      <g id="gunman" transform="translate(100,150)">
+        <circle
+          cx="0"
+          cy="-50"
+          r="20"
+          stroke="black"
+          fill="none"
+          stroke-width="3"
+        />
+        <line x1="0" y1="-30" x2="0" y2="40" stroke="black" stroke-width="3" />
+        <line
+          x1="0"
+          y1="-20"
+          x2="40"
+          y2="-20"
+          stroke="black"
+          stroke-width="3"
+        />
+        <!-- Arm holding gun -->
+        <rect id="gun" x="40" y="-25" width="30" height="10" fill="black" />
+        <line x1="0" y1="40" x2="-20" y2="80" stroke="black" stroke-width="3" />
+        <line x1="0" y1="40" x2="20" y2="80" stroke="black" stroke-width="3" />
+      </g>
+
+      <!-- Victim -->
+      <g id="victim" transform="translate(600,150)">
+        <circle
+          cx="0"
+          cy="-50"
+          r="20"
+          stroke="black"
+          fill="none"
+          stroke-width="3"
+        />
+        <line x1="0" y1="-30" x2="0" y2="40" stroke="black" stroke-width="3" />
+        <line x1="0" y1="-20" x2="-40" y2="0" stroke="black" stroke-width="3" />
+        <line x1="0" y1="-20" x2="40" y2="0" stroke="black" stroke-width="3" />
+        <line x1="0" y1="40" x2="-20" y2="80" stroke="black" stroke-width="3" />
+        <line x1="0" y1="40" x2="20" y2="80" stroke="black" stroke-width="3" />
+      </g>
+
+      <!-- Bullet -->
+      <circle id="bullet" cx="160" cy="129" r="5" fill="black" opacity="0" />
+
+      <!-- Speech bubbles -->
+      <text id="gunmanText" x="50" y="50" class="speech">
+        Maaf kiya, ja maze kar
+      </text>
+      <text id="victimText" x="550" y="50" class="speech">Thnx Bhaiya</text>
+    </svg>
+
+    <script>
+      const killBtn = document.querySelector(".kill-btn");
+      const forgiveBtn = document.querySelector(".forgive-btn");
+      const bullet = document.querySelector("#bullet");
+      const victim = document.querySelector("#victim");
+      const gunmanText = document.querySelector("#gunmanText");
+      const victimText = document.querySelector("#victimText");
+
+      killBtn.addEventListener("click", () => {
+        // Reset victim & bullet
+        gsap.set(victim, { rotation: 0, transformOrigin: "center" });
+        gsap.set(bullet, { x: 0, opacity: 1 });
+        gsap.set([gunmanText, victimText], { opacity: 0 });
+
+        // Fire bullet
+        gsap.to(bullet, {
+          x: 1400,
+          duration: 2,
+          delay: 0.5,
+          ease: "power1.inOut",
+        });
+
+        // Victim falls after bullet hit
+        gsap.to(victim, {
+          rotation: 90,
+          transformOrigin: "center",
+          duration: 1,
+          delay: 1.2,
+          ease: "power2.in",
+        });
+      });
+
+      forgiveBtn.addEventListener("click", () => {
+        // Reset bullet & victim
+        gsap.set(bullet, { opacity: 0 });
+        gsap.set(victim, { rotation: 0 });
+
+        // Show speech bubbles
+        gsap.to(gunmanText, { opacity: 1, duration: 0.5 });
+        gsap.to(victimText, { opacity: 1, duration: 0.5, delay: 0.2 });
+      });
+    </script>
+  </body>
+</html>

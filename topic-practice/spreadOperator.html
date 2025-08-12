@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <h1>Spread Operator</h1>
+    <p>spread the elements of an array</p>
+    <script>
+        // let arr = [1,2,3,4];
+        // let newArray = [arr];  //this will give u nested array in array 
+
+        // let arr3 = [...arr]; //now the arr has been copied into arr3 / deep copy
+
+        // //we can also merge arrays through spread operator
+        // let arr4 = [...arr, ...arr];
+
+        //spread operator in object
+        const person = {
+            fullname: "ali",
+            age: 22,
+            address:{
+                city:"peshawar",
+            }
+        };
+        console.log(person);
+        
+
+        const newPerson = {...person}; 
+        newPerson.address.city = "karachi"; //this gives problem, bcz nested object still refer to original object and will also change its values
+        console.log(newPerson);
+
+        // const newPerson = {...person, address:{...person.address}}; //you can end reference of nested object/array like this
+        // console.log(newPerson);
+
+        //another way to deep copy
+
+        const newPerson2 = structuredClone(person); //this solve the nested object pass by reference issue
+         
+    </script>
+</body>
+</html>
